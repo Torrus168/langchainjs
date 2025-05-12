@@ -153,6 +153,8 @@ export abstract class Runnable<
     return new RunnableBinding({ bound: this, kwargs, config: {} });
   }
 
+  bindTools?(tools: unknown[], kwargs?: Partial<CallOptions>): Runnable<RunInput, RunOutput, CallOptions>;
+
   /**
    * Return a new Runnable that maps a list of inputs to a list of outputs,
    * by calling invoke() with each input.
